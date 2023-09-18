@@ -21,13 +21,13 @@ def match(pattern: List[str], source: List[str]) -> List[str]:
     # keep checking as long as we haven't hit the end of either pattern or source while
     # pind is still a valid index OR sind is still a valid index (valid index means that
     # the index is != to the length of the list)
-    while "FILL IN CONDITION HERE":
+    while source[sind] != len(sind) or pattern[pind] != len(pind):
         # your job is to fill out the body of this loop
 
         # you should delete the following line
         return ["Not done yet :)"]
 
-        # 1) if we reached the end of the pattern but not source
+        # 1) if we reached the end of the pattern but not source    
 
         # 2) if the current thing in the pattern is a %
         # WARNING: this condition contains the bulk of the code for the assignment
@@ -39,17 +39,21 @@ def match(pattern: List[str], source: List[str]) -> List[str]:
         # 4) if the current thing in the pattern is an _
 
         # 5) if the current thing in the pattern is the same as the current thing in the
-        # source
+        # source start this one
+
+        if pattern[pind] == source[sind]:
+            return(pattern[pind])
+            
 
         # 6) else : this will happen if none of the other conditions are met it
         # indicates the current thing it pattern doesn't match the current thing in
         # source
 
-    return result
+            return result
 
 
 if __name__ == "__main__":
-    assert match(["x", "y", "z"], ["x", "y", "z"]) == [], "test 1 failed"
+    assert match(["x", "y", "z"], ["x", "y", "z"]) == [], "test 1 failed"   ### start at first assert
     assert match(["x", "z", "z"], ["x", "y", "z"]) == None, "test 2 failed"
     assert match(["x", "y"], ["x", "y", "z"]) == None, "test 3 failed"
     assert match(["x", "y", "z", "z"], ["x", "y", "z"]) == None, "test 4 failed"
@@ -73,3 +77,4 @@ if __name__ == "__main__":
     assert match(["x", "%", "z"], ["x", "y", "z", "z", "z"]) == None, "test 15 failed"
 
     print("All tests passed!")
+
