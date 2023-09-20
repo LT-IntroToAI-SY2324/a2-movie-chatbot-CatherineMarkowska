@@ -29,14 +29,15 @@ def match(pattern: List[str], source: List[str]) -> List[str]:
         # 1) if we reached the end of the pattern but not source    
         if pind == len(pattern) and sind < len(source):
             return None
-            ## .join 
 
         # 2) if the current thing in the pattern is a %
         # WARNING: this condition contains the bulk of the code for the assignment
         # If you get stuck on this one, we encourage you to attempt the other conditions
         #   and come back to this one afterwards
         elif pattern[pind] == "%":
-            return None 
+            result = "".join(pattern[pind])
+            pind += 1 
+            sind += 1 
 
         # 3) if we reached the end of the source but not the pattern
         elif sind == len(source) and pind < len(pattern):
