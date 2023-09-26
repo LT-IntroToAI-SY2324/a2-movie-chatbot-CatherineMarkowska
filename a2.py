@@ -91,7 +91,7 @@ if __name__ == "__main__":
     assert match(["x", "%", "y", "z"], ["x", "y", "z"]) == [""], "test 11 failed"
     assert match(["x", "y", "z", "%"], ["x", "y", "z"]) == [""], "test 12 failed"
     assert match(["_", "%"], ["x", "y", "z"]) == ["x", "y z"], "test 13 failed"
-    assert match(["_", "_", "_", "%"], ["x", "y", "z"]) == [
+    assert match(["_", "_", "_", "%"], ["x", "y", "z"]) == [ 
         "x",
         "y",
         "z",
